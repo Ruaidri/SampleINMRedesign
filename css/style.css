@@ -1,0 +1,537 @@
+@font-face {
+  font-family: PopLight;
+  src:url("../fonts/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: PopRegular;
+  src:url("../fonts/Poppins-Regular.ttf");
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 10px 100px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+nav.black{
+  background: rgba(0, 0, 0, 0.9);
+  height: 80px;
+  padding: 10px 50px;
+  z-index: 4;
+}
+nav .logo{
+  float: left;
+}
+nav .logo img{
+  height: 80px;
+  transition: 0.5s;
+}
+nav.black .logo img{
+  height: 60px;
+}
+nav ul{
+  float: right;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li{
+  list-style: none;
+}
+nav ul li a{
+  line-height: 80px;
+  color: #262626;
+  padding: 5px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.5s;
+}
+nav ul li a{
+  color: #fff;
+  line-height: 60px;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #fff;
+  background: #0c4e9c;
+}
+nav ul li ul{
+  display: block;
+  background: rgba(16, 15, 15, 0.95);
+  min-width: 150px;
+  position: absolute;
+  margin-top: 1px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.95);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s ease;
+  transform: translateY(40px);
+}
+nav ul li:hover ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+nav ul li ul li a{
+  padding: 10px;
+}
+section.sec1{
+  width: 100%;
+  height: 70vh;
+  background: url(../images/jumbo.jpg);
+  background-size: cover;
+}
+/* I added this DIV in case you need to place content inside */
+.sec1 h1 {
+   width: 100%;
+   height: 100%;
+   color: #fff;
+   text-shadow: 0 0 3px #000;
+   text-align: center;
+   font-size: 30px;
+}
+section.content{
+  padding: 100px;
+  color: hsl(0,0%,41%);
+  background-image: url(../images/background.jpg);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+section.content h2{
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+  font-weight: lighter;
+  text-align: center;
+}
+section.content p{
+  margin: 20px 0 0;
+  padding: 0;
+  font-size: 1.2em;
+  display: table-cell;
+}
+section.content .p1{
+  padding: 50px;
+}
+section.content h6{
+  margin-top: 0;
+  padding: 0;
+  font-size: 1.2em;
+  font-weight: normal;
+  text-align: center;
+}
+section.content a{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #1670f0;
+  padding: 30px 60px;
+  margin-top: 10px;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+section.content a:before{
+  content: '';
+  position: absolute;
+  top:2px;
+  left: 2px;
+  bottom: 2px;
+  width: 50%;
+  background: rgba(255,255,255,0.05);
+}
+section.content a span:nth-child(1){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #0C002b, #1779FF);
+  animation: animate1 2s linear infinite;
+}
+@keyframes animate1{
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+section.content a span:nth-child(2){
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0C002b, #1779FF);
+  animation: animate2 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animate2{
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(100%);
+  }
+}
+section.content a span:nth-child(3){
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to left, #0C002b, #1779FF);
+  animation: animate3 2s linear infinite;
+}
+@keyframes animate3{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+section.content a span:nth-child(4){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top, #0C002b, #1779FF);
+  animation: animate4 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animate4{
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(-100%);
+  }
+}
+.main{
+  padding:20px;
+  transition:all 2s;
+  text-align:center;
+}
+.popup{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  margin-top:-300%;
+  text-align:center;
+  transition:all 1s ease-in-out;
+}
+.show-popup{
+  margin-top:0px;
+  position:fixed;
+}
+.background-opacity{
+  opacity:0.7;
+  background-color:#757575;
+}
+.box{
+  padding:50px;
+  display:inline-block;
+  background-color:#F5F5F5;
+  margin:40vh auto;
+  border-radius:10px;
+  opacity: 1;
+}
+input[type="button"]{
+  padding:8px 50px;
+  border-radius:1.53em;
+  outline:none;
+  border:none;
+  cursor:pointer;
+  background-color:black;
+  color:white;
+}
+.box a{
+  color: #083b85;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.box li{
+  list-style: none;
+  width: -webkit-fill-available;
+  margin-top: 10px;
+}
+
+/* FOOTER CONTACT */
+.contact{
+  text-align: center;
+  width: 100%;
+  color: #f7f7f7;
+}
+.container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: #161616;
+}
+.container .box{
+  position: relative;
+  width: 280px;
+  height: 400px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.container .box .imgBx{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  clip-path: circle(400px at center 100px);
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.container .box:hover .imgBx{
+  clip-path: circle(80px at center 100px);
+  transition-delay: 0s;
+}
+.container .box:hover .imgBx img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .box .content{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 55%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.container .box .content h2{
+  margin: 0;
+  padding: 0;
+}
+.container .box .content a{
+  text-decoration: none;
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  display: inline-block;
+}
+.container .box .content h2,
+.container .box .content p,
+.container .box .content a{
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateY(20px);
+  margin: 1px 0;
+}
+.container .box:hover .content h2{
+  opacity: 1;
+  transition-delay: 0.5s;
+  transform: translateY(0px);
+}
+.container .box:hover .content p{
+  opacity: 1;
+  transition-delay: 0.7s;
+  transform: translateY(0px);
+}
+.container .box:hover .content a{
+  opacity: 1;
+  transition-delay: 0.9s;
+  transform: translateY(0px);
+  font-size: 20px;
+}
+/* FOOTER CONTACT END */
+
+/* FOOTER STYLE */
+#myFooter .containers{
+  text-align: center;
+}
+#myFooter .footer-copyright{
+  margin-top: 35px;
+  margin-bottom: 0px;
+  text-align: center;
+  color: #777;
+}
+#myFooter ul{
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 18px;
+}
+#myFooter a{
+  color: #282b2d;
+  font-size: 18px;
+}
+#myFooter li{
+  display: inline-block;
+  margin: 0px 15px;
+  line-height: 2;
+}
+#myFooter .footer-social{
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #eee;
+}
+#myFooter .fa{
+  font-size: 36px;
+  margin-right: 15px;
+  margin-left: 20px;
+  background-color: white;
+  color: #d0d0d0;
+  border-radius: 51%;
+  padding: 10px;
+  height: 42px;
+  width: 51px;
+  text-align: center;
+  line-height: 43px;
+  text-decoration: none;
+  transition:color 0.2s;
+}
+#myFooter .fa-facebook:hover{
+  color: #2b55ff;
+}
+#myFooter .fa-facebook:focus{
+  color: #2b55ff;
+}
+#myFooter .fa-google-plus:hover{
+  color:red;
+}
+#myFooter .fa-google-plus:focus{
+  color:red;
+}
+#myFooter .fa-twitter:hover{
+  color: #00aced;
+}
+#myFooter .fa-twitter:focus{
+  color:#00aced;
+}
+/* CSS used for positioning the footers at the bottom of the page. */
+/* You can remove this. */
+#myFooter{
+  background: #d0d0d0;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+.responsive-bar{
+  display: none;
+}
+@media (max-width: 768px){
+  .responsive-bar{
+    display: block;
+    width: 100%;
+    height: 60px;
+    background: #262626;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+  .responsive-bar .logo img{
+    float: left;
+    height: 50px;
+  }
+  .responsive-bar .menu h4{
+    float: right;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  nav.black{
+    background: none;
+    height: 60px;
+    padding: 0;
+    z-index: 1;
+  }
+  nav .logo{
+    display: none;
+  }
+  nav ul{
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    background: #262626;
+    float: none;
+    display: none;
+  }
+  nav ul.active{
+    display: block;
+    z-index: 7;
+  }
+  nav ul li{
+    width: 100%;
+  }
+  nav ul li a{
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 30px !important;
+    color: #fff;
+  }
+  section.content {
+    padding: 0;
+    margin-bottom: 100px;
+    background-image: none;
+  }
+  section.content p{
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+  section.content .p1{
+    padding: 0;
+  }
+  section.content a {
+    padding: 0;
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+  .box a{
+    font-size: 1.2em;
+    margin-top: 0;
+  }
+  .box h2{
+    margin-top: 0;
+  }
+  .container .box {
+    width: 255px;
+    height: 340px;
+  }
+}
